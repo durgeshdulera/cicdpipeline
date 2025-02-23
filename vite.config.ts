@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   let base = "/cicdpipeline/";
 
   if (mode === "development") {
-    base = "/cicdpipeline/dev/";
+    base = "/cicdpipeline/development/";
   }
 
   return {
