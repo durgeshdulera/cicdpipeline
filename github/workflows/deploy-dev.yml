@@ -29,7 +29,7 @@ jobs:
           echo "VITE_BASE_PATH=/repo/dev/" >> $GITHUB_ENV
 
       - name: Build project (Development)
-        run: npm run build
+        run: npm run build:dev
 
       - name: Deploy to GitHub Pages (Development)
         uses: peaceiris/actions-gh-pages@v3
@@ -38,4 +38,4 @@ jobs:
           publish_dir: ./dist
           user_name: "github-actions"
           user_email: "github-actions@github.com"
-          destination_folder: dev
+          destination_folder: development
