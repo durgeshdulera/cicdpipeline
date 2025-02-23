@@ -3,9 +3,17 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, "", ""); // Load env vars based on mode
+  let base = "/cicdpipeline/";
+
+  if (mode === "development") {
+    base = "/cicdpipeline/dev/";
+  }
 
   return {
     plugins: [react()],
-    base: env.VITE_BASE_PATH || "/cicdpipeline/", // Use loaded env var or default
+    base: base,
+    build: {
+      outDir: mode === "development" ? "dist-development" : "dist", // Set output directory based on mode
+    },
   };
 });

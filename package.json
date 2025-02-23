@@ -3,14 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://durgeshdulera.github.io/cicdpipeline",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "build": "vite build",
+    "build:dev": "vite build --mode development",
+    "deploy": "gh-pages -d dist-development",
+    "deploy:dev": "gh-pages -d dist-development -b gh-pages -e cicdpipeline/development"
   },
   "dependencies": {
     "react": "^19.0.0",
