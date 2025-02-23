@@ -26,7 +26,7 @@ jobs:
         run: |
           cp .env.development .env
           echo "Building for Development"
-          echo "VITE_BASE_PATH=/repo/dev/" >> $GITHUB_ENV
+          echo "VITE_BASE_PATH=/repo/development/" >> $GITHUB_ENV
 
       - name: Build project (Development)
         run: npm run build:dev
